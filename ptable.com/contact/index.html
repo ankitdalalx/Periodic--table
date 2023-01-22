@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<!-- Mirrored from ptable.com/contact/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 12:48:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta name="viewport" content="width=device-width">
+  <link rel="canonical" href="index.html">
+  <link href="../subpage/subpage.css" rel="stylesheet">
+  <link rel="icon" href="../icon/pt-square.svg">
+
+  <style type="text/css">
+   main dt, main dd	{ max-height: 0; overflow: hidden; transition: max-height 0.5s linear; }
+   .Show	{ max-height: 15em; }
+   main dt	{ font-weight: bold; }
+   p		{ clear: both; }
+
+   .Blocked,
+   .url		{ display: none; }
+  </style>
+  <script>
+window.addEventListener("load", load_complete);
+
+function load_complete() {
+//	if (!document.getElementById("ExtOarJars")) {
+//		document.getElementById("AdblockEnabled").style.display = "initial";
+//		document.getElementById("AdblockLabel").style.display = "initial";
+//	}
+
+	document.getElementById("Comments").onkeyup = check_and_display_faq;
+}
+
+function onSubmit(token) {
+	document.getElementById("feedback").submit();
+}
+
+const trigger_words = {
+	"Helium":	["helium"],
+	"Caesium":	["cesium", "caesium", "aluminum", "aluminium"],
+	"Roman":	["roman", "numeral"],
+	"Valence":	["valence", "valance", "oxidation", "charge"],
+	"Weight":	["mass", "weight"],
+	"Actinoid":	["lanthanide", "lanthanoid", "actinoid", "actinide"],
+	"Config":	["config", "chromium", "nickel", "copper", "niobium", "molybdenum", "ruthenium", "rhodium", "palladium", "silver", "lanthanum", "cerium", "gadolinium", "platinum", "gold", "actinium", "thorium", "protactinium", "uranium", "neptunium", "curium", "lawrencium"],
+	"BuyAds":	["ads", "advertising", "article", "blog", "guest post", "brands", "placements", "audience", "engagement"]
+};
+
+function check_and_display_faq() {
+	const make_search_regexp = string_array => new RegExp(string_array.join("|"), "i");
+	const input_comments = this.value;
+	let any_match = false;
+	for (const id in trigger_words) {
+		const search_reg = make_search_regexp(trigger_words[id]);
+		const match = search_reg.test(input_comments);
+		if (match)
+			any_match = true;
+		document.querySelectorAll(`[id^='${id}']`)
+			.forEach(el => el.classList.toggle("Show", match));
+		document.querySelector(`[type='submit']`).textContent = any_match ? "I read the suggested solution. Send anyway." : "Send";
+	}
+}
+
+  </script>
+  <script src="../../js.hcaptcha.com/1/api.js" async defer></script>
+
+  <title>Contact - Ptable</title>
+ </head>
+ <body>
+
+<header>
+ <a href="../index.html"><img src="../icon/ptable-logo.svg" alt="Ptable"></a>
+ <h1>Contact</h1>
+</header>
+
+<main>
+<p>Get in touch with Ptable's creator. Include your e-mail address to receive a personal reply. You can also call or text Ptable at <a href="sms://+17404782253">+1 (740) 4-PTABLE</a>.</p>
+
+<form enctype="multipart/form-data" action="https://ptable.com/contact/feedback.php" method="post" id="feedback">
+
+<fieldset>
+ <legend><a href="https://feedback.ptable.com/">Suggest a feature</a></legend>
+ <p style="padding: 0 0.5em;">Have an idea to improve Ptable? I'd love to hear your ideas for new features, suggestions for improvements, or even annoyances you'd like to see fixed.</p>
+</fieldset>
+
+<fieldset>
+ <legend>Send a message</legend>
+ <input type="text" name="url" class="url">
+ <input type="email" name="sender" placeholder="Email address">
+ <textarea name="Comments" id="Comments" rows=10 placeholder="Your message"></textarea>
+<!--
+ <input class="Blocked" type="checkbox" name="AdBlock" id="AdblockEnabled" disabled checked>
+ <label id="AdblockLabel" class="Blocked" for="AdblockEnabled">I am blocking Ptable's single ad banner</label>
+-->
+ <dl>
+  <dt id="HeliumQ">Helium isn't a solid at absolute zero.</dt>
+  <dd id="HeliumA">The temperature slider shows melting and boiling points at standard pressure. Unlike any other element, helium will remain liquid down to absolute zero at normal pressures. This is a direct effect of quantum mechanics: specifically, the zero point energy of the system is too high to allow freezing. At 2.5MPa, a very high pressure, it will become solid. Then again, so will almost every other element.</dd>
+
+  <dt id="CaesiumQ">You misspelled cesium/aluminum.</dt>
+  <dd id="CaesiumA">When the USA submitted to the oversight of the International Union of Pure and Applied Chemistry (which allowed it to have some names for element 104-111, but not all of them), compromises were made. Aluminium is the British spelling, as is caesium. In exchange, the American spelling of sulfur (vs. sulphur) became the international standard.</dd>
+
+  <dt id="RomanQ">Where are the Roman numeral group numbers like VIIB?</dt>
+  <dd id="RomanA">Roman numerals for groups were scrapped in 1990 by IUPAC because they're different and conflicting in the US and UK and Ptable has an international audience. If you're seeing them elsewhere, that source hasn't been updated in 30 years.</dd>
+
+  <dt id="ValenceQ">Where can I find valence numbers?</dt>
+  <dd id="ValenceA">Electron-related properties can be found under <a href="../index.html#Electrons/OxidationStates">oxidation states in the Electrons tab</a>.</dd>
+
+  <dt id="WeightQ">It's supposed to be atomic mass, not weight.</dt>
+  <dd id="WeightA">Atomic weight is the official term used by IUPAC to refer to the relative atomic masses published specifically for inclusion in periodic tables. The term is used because they are <b>weighted</b> averages.</dd>
+
+  <dt id="ActinoidQ">Isn't it supposed to be Lanthan<u>ide</u>, not -<u>oid</u>?</dt>
+  <dd id="ActinoidA">No, not <a href="http://old.iupac.org/publications/books/rbook/Red_Book_2005.pdf">according to IUPAC [PDF]</a> (IR-3.5).</dd>
+
+  <dt id="ConfigQ">The electron configuration for an element is wrong.</dt>
+  <dd id="ConfigA">Ptable shows true, experimental values for electron configuration. The method of drawing arrows you learned in class is a simplified method that works most of the time but <a href="https://en.wikipedia.org/wiki/Electron_configuration#Other_exceptions_to_Madelung.27s_rule">has about 20 exceptions</a>. When arrow-drawing differs from true values, Ptable shows those <span style="color: #900; text-decoration: overline;">overlined in red</span>.</dd>
+
+  <dt id="BuyAdsQ">My company would like to purchase advertising.</dt>
+  <dd id="BuyAdsA">Create a CPC or CPM campaign in AdWords targeting this domain. It will compete with others who've done the same. I do not accept video ads, expanding ads, or interstitials; these will not run at any price. Do not contact me to publish "articles" with backlinks (blogspam), paid links, or any other link schemes.</dd>
+ </dl>
+
+ <button type="submit" class="h-captcha" data-sitekey="2d547cc1-f03a-4b1e-b130-fbfc1fbb3a2f" data-callback="onSubmit">Send</button>
+</fieldset>
+
+</form>
+</main>
+
+<footer>
+ <dl>
+  <dt>About</dt>
+  <dd><a href="https://youtu.be/jFKam4BWfQM">What's new</a></dd>
+  <dd><a href="../about/index.html">Questions</a></dd>
+  <dd><a href="../about/index.html#privacy">Privacy</a></dd>
+ </dl>
+ <dl>
+  <dt>Products</dt>
+  <dd><a href="../poster/index.html">Poster</a></dd>
+  <dd><a href="../lessonplans/index.html">Lesson plans</a></dd>
+  <dd><a href="http://www.patreon.com/oauth2/authorize?response_type=code&amp;client_id=sN8bpQO5TsIYTlhXxjS3-ZLYdtqZOHgjiPC928SlNyQLBnafLFEfj1rmMDjcnO3A&amp;redirect_uri=https%3A%2F%2Fptable.com%2Fdonate%2F">Remove ads</a></dd>
+ </dl>
+ <dl>
+  <dt>Editions</dt>
+  <dd><a href="../index.html">Periodic table</a></dd>
+  <dd><a href="../print/index.html">Print PDF</a></dd>
+  <dd><a href="../image/periodic-table.svg" alt="Periodic table">Image</a></dd>
+ </dl>
+ <dl>
+  <dt>Engage</dt>
+  <dd><a href="http://chem.chat/">Discord</a></dd>
+  <dd><a href="http://twitter.com/ptable">Twitter</a></dd>
+  <dd><a href="http://www.instagram.com/ptable/">Instagram</a></dd>
+  <dd><a href="index.html">Contact</a></dd>
+ </dl>
+ <addr>Ptable® <span>is a registered trademark of</span> <a href="https://dayah.com/">Michael Dayah</a></addr>
+</footer>
+<script defer data-domain="ptable.com" src="../../plausible.io/js/plausible.js"></script>
+ </body>
+
+<!-- Mirrored from ptable.com/contact/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Jan 2023 12:48:22 GMT -->
+</html>
+
